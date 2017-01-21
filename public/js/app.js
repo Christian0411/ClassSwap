@@ -1,6 +1,10 @@
 angular.module("myapp", ["ui.router"])
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($routeProvider) {
+  $routeProvider
+          .when("/", {
+              templateUrl: "../index.html",
+          })
 
 })
 
