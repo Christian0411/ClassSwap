@@ -21,8 +21,16 @@ app.controller('navCtrl', function($scope, $location, $rootScope, $http){
 
 });
 
-app.controller('indexCtrl', function($scope, $location, $rootScope, $http){
+app.controller('homeCtrl', function($scope, $location, $rootScope, $http){
 
+
+  $http({
+    method:"GET",
+    url:'/api/getStudentInfo'
+  }).then(function(res)
+  {
+    $scope.Students = res.data;
+  })
 
 
 });

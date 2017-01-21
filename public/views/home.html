@@ -33,7 +33,7 @@
                     <a href="">My Swaps</a>
                 </li> -->
                 <li>
-                    <button type="button" ng-click="login_clicked()">Login</button>
+                    <button class="loginBtn" type="button" ng-click="login_clicked()">Login</button>
                 </li>
                 <!-- <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <b class="caret"></b></a>
@@ -63,7 +63,7 @@
 </nav>
 
 <!-- Page Content -->
-<div ng-controller="indexCtrl" class="container">
+<div ng-controller="homeCtrl" class="container">
     <!-- Marketing Icons Section -->
     <div class="row">
         <div class="col-lg-12">
@@ -71,10 +71,10 @@
                 Available Swaps
             </h1>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" ng-repeat="student in Students">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h4> ccani</h4>
+                    <h4>{{student.csp.username}}</h4>
                 </div>
                 <div class="panel-body">
                   <table class="table">
@@ -108,90 +108,14 @@
             </div>
         </div>
       </div>
-      <div class="row">
-          <div class="col-md-4">
-              <div class="panel panel-default">
-                  <div class="panel-heading">
-                      <h4> omart</h4>
-                  </div>
-                  <div class="panel-body">
-                    <table class="table">
-                      <thead>
-                        <tr>
-                          <th>Has</th>
-                          <th>Wants</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td><i class="fa fa-circle" aria-hidden="true"></i> COP4338 - Programming 3 - Caryl Rahn <br/> (MW 2 - 3:15 PM)
-                          </td>
-                          <td><i class="fa fa-circle" aria-hidden="true"></i> MAD2104 - Discrete Math - Susan Gorman <br/> (TR 5 - 6:30 PM)
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><i class="fa fa-circle" aria-hidden="true"></i> COP4710 - Database Management - Jainendra Navlakha <br/> (TR 2 - 3:15 PM)
-                          </td>
-                          <td></td>
-                        </tr>
-                        <tr>
-                          <td><i class="fa fa-circle" aria-hidden="true"></i> MAD3512 - Theory of Algorithms - George Kafkoulis <br/> (TR 7:50 - 9 PM)
-                          </td>
-                        <td></td>
-                        </tr>
-                      </tbody>
-                    </table>
-                    <a href="" class="btn btn-default">Swap</a>
-                  </div>
-              </div>
-          </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4> ataho</h4>
-                    </div>
-                    <div class="panel-body">
-                      <table class="table">
-                        <thead>
-                          <tr>
-                            <th>Has</th>
-                            <th>Wants</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td><i class="fa fa-circle" aria-hidden="true"></i> COP4338 - Programming 3 - Caryl Rahn <br/> (MW 2 - 3:15 PM)
-                            </td>
-                            <td><i class="fa fa-circle" aria-hidden="true"></i> MAC2312 - Calculus 2 - Tedi Draghici <br/> (MWF 11 - 1 PM)
-                            </td>
-                          </tr>
-                          <tr>
-                            <td><i class="fa fa-circle" aria-hidden="true"></i> COP4710 - Database Management - Jainendra Navlakha <br/> (TR 2 - 3:15 PM)
-                            </td>
-                            <td></td>
-                          </tr>
-                          <tr>
-                            <td><i class="fa fa-circle" aria-hidden="true"></i> MAD2104 - Discrete Math - Susan Gorman <br/> (TR 5 - 6:30 PM)
-                            </td>
-                          <td></td>
-                          </tr>
-                        </tbody>
-                      </table>
-                      <a href="" class="btn btn-default">Swap</a>
-                    </div>
-                </div>
-            </div>
-          </div>
-    </div>
+
     <!-- /.row -->
 
     <!-- Footer -->
     <footer>
         <div class="row">
             <div class="col-lg-12">
-                <p>Copyright &copy; Your Website 2014</p>
+                <!-- <p>Copyright &copy; Your Website 2014</p> -->
             </div>
         </div>
     </footer>

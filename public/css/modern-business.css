@@ -98,7 +98,7 @@ footer {
 
 /*table width*/
 .panel-default {
-  width: 1140px;
+  width: 1140px;  
 }
 
 /*Login Page*/
@@ -144,5 +144,11 @@ footer {
 .btn-custom:focus {
     color: #fff;
 }
-
 /*End of Login page*/
+
+.loginBtn{
+  padding-top: 15px;
+  background: transparent;
+  border: none !important;
+  color: white;
+}
