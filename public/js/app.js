@@ -1,13 +1,34 @@
-angular.module("myapp", ["ui.router"])
+var app = angular.module("myapp",['ngRoute'])
 
-.config(function($routeProvider) {
+app.config(function($routeProvider) {
   $routeProvider
-          .when("/", {
-              templateUrl: "../index.html"
-          })
+    .when("/", {
+      templateUrl: "../views/home.html",
+     })
+    .when("/login", {
+      templateUrl: "../views/login.html"
+    })
+    .otherwise({redirectTo: '/'})
+});
 
-})
+app.controller('navCtrl', function($scope, $location, $rootScope, $http){
 
-.controller("MainController", function($scope, $http, $state, $stateParams) {
+  $scope.login_clicked = function()
+  {
+    $location.path("/login");
+  }
+
+
+});
+
+app.controller('indexCtrl', function($scope, $location, $rootScope, $http){
+
+
+
+});
+
+app.controller('loginCtrl', function($scope, $location, $rootScope, $http){
+
+
 
 });

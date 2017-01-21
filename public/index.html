@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myapp">
 
 <head>
 
@@ -10,16 +9,17 @@
     <meta name="author" content="">
 
     <title>Modern Business - Start Bootstrap Template</title>
-    <script src="../js/angular.min.js"></script>
-    <script src="../js/app.js"></script>
+    <script src="./js/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+    <script src="./js/app.js"></script>
     <!-- Bootstrap Core CSS -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="../css/modern-business.css" rel="stylesheet">
+    <link href="./css/modern-business.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="./font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -30,201 +30,10 @@
 
 </head>
 
-<body ng-app="myapp">
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <img src="../imgs/logo.png" height="40" width="160">
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <!-- Show this li when logged in -->
-                    <!-- <li>
-                        <a href="">My Swaps</a>
-                    </li> -->
-                    <li>
-                        <a href="">Login</a>
-                    </li>
-                    <!-- <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="portfolio-1-col.html">1 Column Portfolio</a>
-                            </li>
-                            <li>
-                                <a href="portfolio-2-col.html">2 Column Portfolio</a>
-                            </li>
-                            <li>
-                                <a href="portfolio-3-col.html">3 Column Portfolio</a>
-                            </li>
-                            <li>
-                                <a href="portfolio-4-col.html">4 Column Portfolio</a>
-                            </li>
-                            <li>
-                                <a href="portfolio-item.html">Single Portfolio Item</a>
-                            </li>
-                        </ul>
-                    </li> -->
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
-    <!-- Page Content -->
-    <div class="container">
-        <!-- Marketing Icons Section -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">
-                    Available Swaps
-                </h1>
-            </div>
-            <div class="col-md-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4> ccani</h4>
-                    </div>
-                    <div class="panel-body">
-                      <table class="table">
-                        <thead>
-                          <tr>
-                            <th>Has</th>
-                            <th>Wants</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td><i class="fa fa-circle" aria-hidden="true"></i> COP4338 - Programming 3 - Caryl Rahn <br/> (MW 2 - 3:15 PM)
-                            </td>
-                            <td><i class="fa fa-circle" aria-hidden="true"></i> MAD3512 - Theory of Algorithms - George Kafkoulis <br/> (TR 7:50 - 9 PM)
-                            </td>
-                          </tr>
-                          <tr>
-                            <td><i class="fa fa-circle" aria-hidden="true"></i> COP4710 - Database Management - Jainendra Navlakha <br/> (TR 2 - 3:15 PM)
-                            </td>
-                            <td></td>
-                          </tr>
-                          <tr>
-                            <td><i class="fa fa-circle" aria-hidden="true"></i> MAD2104 - Discrete Math - Susan Gorman <br/> (TR 5 - 6:30 PM)
-                            </td>
-                          <td></td>
-                          </tr>
-                        </tbody>
-                      </table>
-                      <a href="" class="btn btn-default">Swap</a>
-                    </div>
-                </div>
-            </div>
-          </div>
-          <div class="row">
-              <div class="col-md-4">
-                  <div class="panel panel-default">
-                      <div class="panel-heading">
-                          <h4> omart</h4>
-                      </div>
-                      <div class="panel-body">
-                        <table class="table">
-                          <thead>
-                            <tr>
-                              <th>Has</th>
-                              <th>Wants</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td><i class="fa fa-circle" aria-hidden="true"></i> COP4338 - Programming 3 - Caryl Rahn <br/> (MW 2 - 3:15 PM)
-                              </td>
-                              <td><i class="fa fa-circle" aria-hidden="true"></i> MAD2104 - Discrete Math - Susan Gorman <br/> (TR 5 - 6:30 PM)
-                              </td>
-                            </tr>
-                            <tr>
-                              <td><i class="fa fa-circle" aria-hidden="true"></i> COP4710 - Database Management - Jainendra Navlakha <br/> (TR 2 - 3:15 PM)
-                              </td>
-                              <td></td>
-                            </tr>
-                            <tr>
-                              <td><i class="fa fa-circle" aria-hidden="true"></i> MAD3512 - Theory of Algorithms - George Kafkoulis <br/> (TR 7:50 - 9 PM)
-                              </td>
-                            <td></td>
-                            </tr>
-                          </tbody>
-                        </table>
-                        <a href="" class="btn btn-default">Swap</a>
-                      </div>
-                  </div>
-              </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4> ataho</h4>
-                        </div>
-                        <div class="panel-body">
-                          <table class="table">
-                            <thead>
-                              <tr>
-                                <th>Has</th>
-                                <th>Wants</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <td><i class="fa fa-circle" aria-hidden="true"></i> COP4338 - Programming 3 - Caryl Rahn <br/> (MW 2 - 3:15 PM)
-                                </td>
-                                <td><i class="fa fa-circle" aria-hidden="true"></i> MAC2312 - Calculus 2 - Tedi Draghici <br/> (MWF 11 - 1 PM)
-                                </td>
-                              </tr>
-                              <tr>
-                                <td><i class="fa fa-circle" aria-hidden="true"></i> COP4710 - Database Management - Jainendra Navlakha <br/> (TR 2 - 3:15 PM)
-                                </td>
-                                <td></td>
-                              </tr>
-                              <tr>
-                                <td><i class="fa fa-circle" aria-hidden="true"></i> MAD2104 - Discrete Math - Susan Gorman <br/> (TR 5 - 6:30 PM)
-                                </td>
-                              <td></td>
-                              </tr>
-                            </tbody>
-                          </table>
-                          <a href="" class="btn btn-default">Swap</a>
-                        </div>
-                    </div>
-                </div>
-              </div>
-        </div>
-        <!-- /.row -->
-
-        <!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
-                </div>
-            </div>
-        </footer>
-
-    </div>
-    <!-- /.container -->
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
+<body>
+  <div id="main">
+  <div ng-view></div>
+</div>
 </body>
 
 </html>
