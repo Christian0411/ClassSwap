@@ -8,12 +8,18 @@ app.config(function($routeProvider) {
     .when("/login", {
       templateUrl: "../views/login.html"
     })
+    .when("/register", {
+      templateUrl: "../views/register.html"
+    })
+    .when("/swap", {
+      templateUrl: "../views/swap.html"
+    })
     .otherwise({redirectTo: '/'})
 });
 
 app.controller('navCtrl', function($scope, $location, $rootScope, $http){
 
-  $scope.login_clicked = function()
+  $scope.login = function()
   {
     $location.path("/login");
   }
@@ -35,8 +41,22 @@ app.controller('homeCtrl', function($scope, $location, $rootScope, $http){
 
 });
 
-app.controller('loginCtrl', function($scope, $location, $rootScope, $http){
+app.controller('registerCtrl', function($scope, $location, $rootScope, $http){
 
+  $scope.register = function()
+  {
+    $location.path("/register");
+  }
+
+
+});
+
+app.controller('swapCtrl', function($scope, $location, $rootScope, $http){
+
+  $scope.swap = function()
+  {
+    $location.path("/swap");
+  }
 
 
 });

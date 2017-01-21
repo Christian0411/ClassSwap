@@ -33,7 +33,7 @@
                     <a href="">My Swaps</a>
                 </li> -->
                 <li>
-                    <button class="loginBtn" type="button" ng-click="login_clicked()">Login</button>
+                    <button class="loginBtn" type="button" ng-click="login()">Login</button>
                 </li>
                 <!-- <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <b class="caret"></b></a>
@@ -71,8 +71,8 @@
                 Available Swaps
             </h1>
         </div>
-        <div class="col-md-4" ng-repeat="student in Students">
-            <div class="panel panel-default">
+        <div ng-controller="swapCtrl" class="col-md-4">
+            <div ng-repeat="student in Students" class="panel panel-default">
                 <div class="panel-heading">
                     <h4>{{student.csp.username}}</h4>
                 </div>
@@ -103,7 +103,7 @@
                       </tr>
                     </tbody>
                   </table>
-                  <a href="" class="btn btn-default">Swap</a>
+                  <a href="" ng-click="swap()" class="btn btn-default">Swap</a>
                 </div>
             </div>
         </div>
