@@ -101,6 +101,8 @@ footer {
   width: 1140px;
 }
 
+/*Login Page*/
+
 #login {
     padding-top: 50px
 }
@@ -142,3 +144,5 @@ footer {
 .btn-custom:focus {
     color: #fff;
 }
+
+/*End of Login page*/
