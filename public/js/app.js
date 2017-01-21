@@ -27,6 +27,16 @@ app.controller('navCtrl', function($scope, $location, $rootScope, $http){
 
 });
 
+app.controller('logoCtrl', function($scope, $location, $rootScope, $http){
+
+  $scope.logoClick = function()
+  {
+    $location.path("/");
+  }
+
+
+});
+
 app.controller('homeCtrl', function($scope, $location, $rootScope, $http){
 
 
