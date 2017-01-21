@@ -91,3 +91,12 @@ footer {
         height: 70%;
     }
 }
+
+.navbar-brand {
+  padding-top: 5px;
+}
+
+/*table width*/
+.panel-default {
+  width: 1140px;
+}

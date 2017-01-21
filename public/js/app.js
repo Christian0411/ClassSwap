@@ -3,7 +3,7 @@ angular.module("myapp", ["ui.router"])
 .config(function($routeProvider) {
   $routeProvider
           .when("/", {
-              templateUrl: "../index.html",
+              templateUrl: "../index.html"
           })
 
 })
