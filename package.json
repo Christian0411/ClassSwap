@@ -1,0 +1,25 @@
+{
+  "name": "class_swap",
+  "version": "0.0.1",
+  "description": "ClassSwap helps students find and trade classes they need!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Christian0411/ClassSwap.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Christian0411/ClassSwap/issues"
+  },
+  "homepage": "https://github.com/Christian0411/ClassSwap#readme",
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "couchbase": "^2.3.0",
+    "express": "^4.14.0",
+    "uuid": "^3.0.1"
+  }
+}
