@@ -166,3 +166,17 @@ footer {
     margin-left: 5em;
     margin-bottom: 1em;
 }
+
+#x {
+  color: red;
+}
+
+#addBtn {
+  float: right;
+  margin-top: -30px;
+}
+#removeBtn {
+  float: right;
+  margin-top: -30px;
+  margin-left: 10px;
+}
