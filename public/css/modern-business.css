@@ -137,12 +137,12 @@ footer {
     color: #212121;
 }
 .btn-custom {
-    color: #fff;
-	  background-color: #222222;
+    color: black;
+	  background-color: #F5F5F5;
 }
 .btn-custom:hover,
 .btn-custom:focus {
-    color: #fff;
+    color: black;
 }
 /*End of Login page*/
 
@@ -165,13 +165,4 @@ footer {
 *[role="form"] h2 {
     margin-left: 5em;
     margin-bottom: 1em;
-}
-
-.btn-custom {
-  background: #222222;
-  color: white;
-}
-
-.btn-custom: hover{
-  color: white !important;
 }

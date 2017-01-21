@@ -14,6 +14,9 @@ app.config(function($routeProvider) {
     .when("/swap", {
       templateUrl: "../views/swap.html"
     })
+    .when("/myAccount", {
+      templateUrl: "../views/myAccount.html"
+    })
     .otherwise({redirectTo: '/'})
 });
 
@@ -63,9 +66,53 @@ app.controller('registerCtrl', function($scope, $location, $rootScope, $http){
 
 app.controller('swapCtrl', function($scope, $location, $rootScope, $http){
 
-  $scope.swap = function()
+  // $scope.swap = function()
+  // {
+  //   if($rootScope.loggedIn)
+  //   {
+  //       $location.path("/swap");
+  //   }
+  //   else {
+  //     {
+  //       $location.path("/login");
+  //     }
+  //   }
+  // }
+  $scope.swap = function(traderName)
   {
+    $rootScope.trader = traderName;
     $location.path("/swap");
+  }
+
+
+});
+
+app.controller('confirmSwapCtrl', function($scope, $location, $rootScope, $http){
+
+  $scope.confirmSwap = function()
+  {
+    var div = document.getElementById('swap_button').style.display = 'none';
+    $scope.confirmed = true;
+  }
+
+
+});
+
+app.controller('logoutCtrl', function($scope, $location, $rootScope, $http){
+
+  $scope.logout = function()
+  {
+    $location.path("/");
+  }
+
+
+});
+
+app.controller('accountCtrl', function($scope, $location, $rootScope, $http){
+
+  $scope.myAccount = function()
+  {
+    $location.path("/myAccount");
   }
 
 

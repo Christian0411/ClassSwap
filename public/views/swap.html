@@ -46,13 +46,13 @@
                 <img ng-click="logoClick()" src="../imgs/logo.png" height="40" width="160">
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div ng-controller="logoutCtrl" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="">My Swaps</a>
+                    <li ng-controller="accountCtrl">
+                        <a href="" ng-click="myAccount()">My Account</a>
                     </li>
                     <li>
-                        <a href="">Logout</a>
+                        <a href="" ng-click="logout()">Logout</a>
                     </li>
                     <!-- <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <b class="caret"></b></a>
@@ -84,7 +84,7 @@
     <!-- Page Content -->
     <div class="container">
         <!-- Marketing Icons Section -->
-        <div class="row">
+        <div ng-controller="confirmSwapCtrl" class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">
                     Swap
@@ -94,7 +94,7 @@
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4> ccani</h4>
+                        <h4>{{trader}}</h4>
                     </div>
                     <div class="panel-body">
                       <table class="table">
@@ -123,7 +123,11 @@
                           </tr>
                         </tbody>
                       </table>
-                      <a href="" class="btn btn-default">Swap</a>
+                      <a href="" id="swap_button" ng-click="confirmSwap()" class="btn btn-default">Swap</a>
+                      <div ng-show="confirmed" class="alert alert-success">
+                        <strong>Success!</strong> An email has been sent to {{trader}} with your
+                        contact information to complete the swap!
+                      </div>
                     </div>
                 </div>
             </div>
