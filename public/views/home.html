@@ -12,10 +12,9 @@
     <title>ClassSwap</title>
 </head>
 <body>
-<!-- Navigation -->
+<!-- Navbar -->
 <nav ng-controller="navCtrl" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span>
@@ -28,10 +27,6 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <!-- Show this li when logged in -->
-                <!-- <li>
-                    <a href="">My Swaps</a>
-                </li> -->
                 <li>
                     <button class="loginBtn" type="button" ng-click="login()">Login</button>
                 </li>
@@ -57,14 +52,11 @@
                 </li> -->
             </ul>
         </div>
-        <!-- /.navbar-collapse -->
     </div>
-    <!-- /.container -->
 </nav>
 
 <!-- Page Content -->
 <div ng-controller="homeCtrl" class="container">
-    <!-- Marketing Icons Section -->
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">
@@ -72,6 +64,7 @@
             </h1>
         </div>
         <div class="col-md-4">
+            <!-- Repeats for all students in DB -->
             <div ng-repeat="student in Students" class="panel panel-default">
                 <div class="panel-heading">
                     <h4>{{student.csp.username}}</h4>
@@ -109,19 +102,15 @@
         </div>
       </div>
 
-    <!-- /.row -->
-
     <!-- Footer -->
     <footer>
         <div class="row">
             <div class="col-lg-12">
-                <!-- <p>Copyright &copy; Your Website 2014</p> -->
             </div>
         </div>
     </footer>
 
 </div>
-<!-- /.container -->
 
 </body>
 </html>

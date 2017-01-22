@@ -23,25 +23,6 @@ body {
     opacity: 0.8;
 }
 
-/* Home Page Carousel */
-
-header.carousel {
-    height: 50%;
-}
-
-header.carousel .item,
-header.carousel .item.active,
-header.carousel .carousel-inner {
-    height: 100%;
-}
-
-header.carousel .fill {
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-size: cover;
-}
-
 /* 404 Page Styles */
 
 .error-404 {
@@ -92,6 +73,7 @@ footer {
     }
 }
 
+/*Logo*/
 .navbar-brand {
   background: url("../imgs/logo.png")  no-repeat scroll 0 center / contain;
   display: inline-block;
@@ -107,7 +89,7 @@ footer {
   width: 1140px;
 }
 
-/*Login Page*/
+/****************************** Login Page **********************************/
 
 #login {
     padding-top: 50px
@@ -136,9 +118,6 @@ footer {
 	    display: block;
 }
 
-/*    --------------------------------------------------
-	:: Inputs & Buttons
-	-------------------------------------------------- */
 .form-control {
     color: #212121;
 }
@@ -150,7 +129,7 @@ footer {
 .btn-custom:focus {
     color: black;
 }
-/*End of Login page*/
+/**************************************************************************/
 
 .loginBtn {
     padding-top: 15px;
@@ -173,10 +152,13 @@ footer {
     margin-bottom: 1em;
 }
 
+/************************* My Account **************************************/
+/*icon to delete classes*/
 #x {
   color: red;
 }
 
+/*Buttons to edit classes*/
 #addBtn {
   float: right;
   margin-top: -30px;
@@ -190,6 +172,8 @@ footer {
   float: right;
   margin-top: -30px;
 }
+/***************************************************************************/
+/*Alert Messages*/
 .alert {
   text-align: center;
 }
