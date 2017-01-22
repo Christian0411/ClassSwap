@@ -27,12 +27,12 @@ app.controller('navCtrl', function($scope, $location, $rootScope, $http){
     $location.path("/login");
   }
 
-
-});
-
-app.controller('logoCtrl', function($scope, $location, $rootScope, $http){
-
   $scope.logoClick = function()
+  {
+    $location.path("/");
+  }
+
+  $scope.logout = function()
   {
     $location.path("/");
   }
@@ -50,6 +50,24 @@ app.controller('homeCtrl', function($scope, $location, $rootScope, $http){
   {
     $scope.Students = res.data;
   })
+
+  // $scope.swap = function()
+  // {
+  //   if($rootScope.loggedIn)
+  //   {
+  //       $location.path("/swap");
+  //   }
+  //   else {
+  //     {
+  //       $location.path("/login");
+  //     }
+  //   }
+  // }
+  $scope.swap = function(traderName)
+  {
+    $rootScope.trader = traderName;
+    $location.path("/swap");
+  }
 
 
 });
@@ -84,31 +102,27 @@ app.controller('swapCtrl', function($scope, $location, $rootScope, $http){
     $location.path("/swap");
   }
 
-
-});
-
-app.controller('confirmSwapCtrl', function($scope, $location, $rootScope, $http){
-
   $scope.confirmSwap = function()
   {
     var div = document.getElementById('swap_button').style.display = 'none';
     $scope.confirmed = true;
   }
 
-
 });
 
-app.controller('logoutCtrl', function($scope, $location, $rootScope, $http){
+app.controller('myAccountCtrl', function($scope, $location, $rootScope, $http){
 
-  $scope.logout = function()
+  $scope.isRemoving = false;
+  $scope.remove = function()
   {
-    $location.path("/");
+    $scope.isRemoving = true;
   }
 
-
-});
-
-app.controller('accountCtrl', function($scope, $location, $rootScope, $http){
+  $scope.done = function()
+  {
+    console.log("here")
+    $scope.isRemoving = false;
+  }
 
   $scope.myAccount = function()
   {

@@ -16,7 +16,7 @@
 <nav ng-controller="navCtrl" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
-        <div ng-controller="logoCtrl" class="navbar-header">
+        <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
@@ -32,7 +32,7 @@
                 <!-- <li>
                     <a href="">My Swaps</a>
                 </li> -->
-                <li ng-controller="logoutCtrl">
+                <li>
                     <button class="loginBtn" type="button" ng-click="logout()">Logout</button>
                 </li>
                 <!-- <li class="dropdown">
@@ -63,7 +63,7 @@
 </nav>
 
 <!-- Page Content -->
-<div ng-controller="homeCtrl" class="container">
+<div ng-controller="myAccountCtrl" class="container">
     <!-- Marketing Icons Section -->
     <div class="row">
         <div class="col-lg-12">
@@ -71,14 +71,17 @@
                 My Account
             </h1>
         </div>
-        <div ng-controller="swapCtrl" class="col-md-4">
+        <div class="col-md-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4>ataho042</h4>
-                    <button type="button" id="removeBtn" class="btn btn-default">
+                    <button ng-if="isRemoving" type="button" id="doneBtn" ng-click="done()" class="btn btn-default">
+                      <span class="glyphicon glyphicon-check"></span> Done
+                    </button>
+                    <button ng-if="!isRemoving" type="button" id="removeBtn" ng-click="remove()" class="btn btn-default">
                       <span class="glyphicon glyphicon-minus"></span> Remove
                     </button>
-                    <button type="button" id="addBtn" class="btn btn-default">
+                    <button ng-if="!isRemoving" type="button" id="addBtn" ng-click="remove()" class="btn btn-default">
                       <span class="glyphicon glyphicon-plus"></span> add
                     </button>
                 </div>
@@ -92,18 +95,18 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td><i id = "x" class="fa fa-times" aria-hidden="true"></i> COP4338 - Programming 3 - Caryl Rahn <br/> (MW 2 - 3:15 PM)
+                        <td><i id = "x" ng-if="isRemoving" class="fa fa-times" aria-hidden="true"></i> COP4338 - Programming 3 - Caryl Rahn <br/> (MW 2 - 3:15 PM)
                         </td>
-                        <td><i id = "x" class="fa fa-times" aria-hidden="true"></i> MAD3512 - Theory of Algorithms - George Kafkoulis <br/> (TR 7:50 - 9 PM)
+                        <td><i id = "x" ng-if="isRemoving" class="fa fa-times" aria-hidden="true"></i> MAD3512 - Theory of Algorithms - George Kafkoulis <br/> (TR 7:50 - 9 PM)
                         </td>
                       </tr>
                       <tr>
-                        <td><i id = "x" class="fa fa-times" aria-hidden="true"></i> COP4710 - Database Management - Jainendra Navlakha <br/> (TR 2 - 3:15 PM)
+                        <td><i id = "x" ng-if="isRemoving" class="fa fa-times" aria-hidden="true"></i> COP4710 - Database Management - Jainendra Navlakha <br/> (TR 2 - 3:15 PM)
                         </td>
                         <td></td>
                       </tr>
                       <tr>
-                        <td><i id = "x" class="fa fa-times" aria-hidden="true"></i> MAD2104 - Discrete Math - Susan Gorman <br/> (TR 5 - 6:30 PM)
+                        <td><i id = "x" ng-if="isRemoving" class="fa fa-times" aria-hidden="true"></i> MAD2104 - Discrete Math - Susan Gorman <br/> (TR 5 - 6:30 PM)
                         </td>
                       <td></td>
                       </tr>
