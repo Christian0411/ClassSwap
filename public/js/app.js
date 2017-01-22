@@ -34,6 +34,7 @@ app.controller('navCtrl', function($scope, $location, $rootScope, $http){
 
   $scope.logout = function()
   {
+    $rootScope.loggedIn = false;
     $location.path("/");
   }
 
@@ -74,9 +75,37 @@ app.controller('homeCtrl', function($scope, $location, $rootScope, $http){
 
 app.controller('registerCtrl', function($scope, $location, $rootScope, $http){
 
+
   $scope.register = function()
   {
     $location.path("/register");
+  }
+
+  $scope.submitLogIn = function()
+  {
+    var username = $scope.username;
+    var pass = $scope.pass;
+
+    var body = {
+              'username': username,
+              'pass': pass
+    };
+
+    $http({
+              method: "POST",
+              url: "/api/login",
+              data: body
+          }).then(function(res,status,headers) {
+              if(res.error != "Error")
+              {
+                $rootScope.loggedIn = true;
+                $scope.username = username;
+                $scope.pass = pass;
+                $rootScope.student = res.data;
+                $location.path("/myAccount");
+              }
+
+            })
   }
 
 

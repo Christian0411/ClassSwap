@@ -26,7 +26,37 @@ var getStudentInfo = function()
 
 }
 
+var login = function(user, pass)
+{
+  var query = N1qlQuery.fromString('SELECT * FROM csp WHERE username ==' + '"' + user + '"' + ' AND pass == ' + '"' + pass + '"')
+
+  return new Promise((resolve,reject) =>
+  {
+    bucket.query(query, function(err,res)
+    {
+      if(err)
+      {
+        reject("Error");
+      }
+      else
+      {
+        console.log(res)
+        if((res.username == user) && (res.pass == pass))
+        {
+            resolve(res);
+        }
+        else
+        {
+            reject("Error");
+        }
+      }
+    });
+  });
+}
+
+
 
 module.exports = {
-  getStudentInfo: getStudentInfo  
+  getStudentInfo: getStudentInfo,
+  login: login
 }
