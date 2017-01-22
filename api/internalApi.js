@@ -40,14 +40,21 @@ var login = function(user, pass)
       }
       else
       {
-        console.log(res)
-        if((res.username == user) && (res.pass == pass))
+        if(res[0] != null)
         {
-            resolve(res);
+          if((res[0].csp.username == user) && (res[0].csp.pass == pass))
+          {
+              resolve(res);
+          }
+          else
+          {
+              reject("Error");
+          }
         }
-        else
-        {
-            reject("Error");
+        else {
+          {
+            reject("Error")
+          }
         }
       }
     });

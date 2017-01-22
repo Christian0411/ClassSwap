@@ -52,24 +52,21 @@ app.controller('homeCtrl', function($scope, $location, $rootScope, $http){
     $scope.Students = res.data;
   })
 
-  // $scope.swap = function()
-  // {
-  //   if($rootScope.loggedIn)
-  //   {
-  //       $location.path("/swap");
-  //   }
-  //   else {
-  //     {
-  //       $location.path("/login");
-  //     }
-  //   }
-  // }
   $scope.swap = function(traderName)
   {
-    $rootScope.trader = traderName;
-    $location.path("/swap");
+    if($rootScope.loggedIn)
+    {
+        $rootScope.trader = traderName;
+        $location.path("/swap");
+    }
+    else {
+      {
+        $rootScope.fromSwap = true;
+        $rootScope.trader = traderName;
+        $location.path("/login");
+      }
+    }
   }
-
 
 });
 
@@ -96,13 +93,25 @@ app.controller('registerCtrl', function($scope, $location, $rootScope, $http){
               url: "/api/login",
               data: body
           }).then(function(res,status,headers) {
-              if(res.error != "Error")
+              if(res.data.error != "Error")
               {
                 $rootScope.loggedIn = true;
                 $scope.username = username;
                 $scope.pass = pass;
-                $rootScope.student = res.data;
-                $location.path("/myAccount");
+                $rootScope.student = res.data[0].csp;
+                if($rootScope.fromSwap)
+                {
+                  $location.path("/swap");  
+                }
+                else
+                {
+                  $location.path("/myAccount");
+                }
+
+              }
+              else
+              {
+                $scope.showAlert = true;
               }
 
             })
@@ -113,23 +122,20 @@ app.controller('registerCtrl', function($scope, $location, $rootScope, $http){
 
 app.controller('swapCtrl', function($scope, $location, $rootScope, $http){
 
-  // $scope.swap = function()
-  // {
-  //   if($rootScope.loggedIn)
-  //   {
-  //       $location.path("/swap");
-  //   }
-  //   else {
-  //     {
-  //       $location.path("/login");
-  //     }
-  //   }
-  // }
   $scope.swap = function(traderName)
   {
-    $rootScope.trader = traderName;
-    $location.path("/swap");
+    if($rootScope.loggedIn)
+    {
+        $rootScope.trader = traderName;
+        $location.path("/swap");
+    }
+    else {
+      {
+        $location.path("/login");
+      }
+    }
   }
+
 
   $scope.confirmSwap = function()
   {
@@ -142,15 +148,21 @@ app.controller('swapCtrl', function($scope, $location, $rootScope, $http){
 app.controller('myAccountCtrl', function($scope, $location, $rootScope, $http){
 
   $scope.isRemoving = false;
+  $scope.isAdding = false;
   $scope.remove = function()
   {
     $scope.isRemoving = true;
   }
+  $scope.add = function()
+  {
+    $scope.isAdding = true;
+  }
 
   $scope.done = function()
   {
-    console.log("here")
     $scope.isRemoving = false;
+    $scope.isAdding = false;
+
   }
 
   $scope.myAccount = function()

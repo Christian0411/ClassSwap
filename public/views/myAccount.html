@@ -23,7 +23,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <img ng-click="logoClick()" src="../imgs/logo.png" height="40" width="160">
+            <a class="navbar-brand" ng-click="logoClick()"></a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -74,14 +74,14 @@
         <div class="col-md-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h4>ataho042</h4>
-                    <button ng-if="isRemoving" type="button" id="doneBtn" ng-click="done()" class="btn btn-default">
+                    <h4>{{student.username}}</h4>
+                    <button ng-if="isRemoving || isAdding" type="button" id="doneBtn" ng-click="done()" class="btn btn-default">
                       <span class="glyphicon glyphicon-check"></span> Done
                     </button>
-                    <button ng-if="!isRemoving" type="button" id="removeBtn" ng-click="remove()" class="btn btn-default">
+                    <button ng-if="!isRemoving && !isAdding" type="button" id="removeBtn" ng-click="remove()" class="btn btn-default">
                       <span class="glyphicon glyphicon-minus"></span> Remove
                     </button>
-                    <button ng-if="!isRemoving" type="button" id="addBtn" ng-click="remove()" class="btn btn-default">
+                    <button ng-if="!isAdding && !isRemoving" type="button" id="addBtn" ng-click="add()" class="btn btn-default">
                       <span class="glyphicon glyphicon-plus"></span> add
                     </button>
                 </div>
