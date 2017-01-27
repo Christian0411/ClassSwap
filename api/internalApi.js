@@ -1,5 +1,5 @@
 var couchbase = require('couchbase');
-var cluster = new couchbase.Cluster('couchbase://159.203.104.142');
+var cluster = new couchbase.Cluster('couchbase://138.197.72.1/');
 var bucket = cluster.openBucket("csp");
 var N1qlQuery = couchbase.N1qlQuery;
 
@@ -7,7 +7,7 @@ var N1qlQuery = couchbase.N1qlQuery;
 
 var getStudentInfo = function()
 {
-  var query = N1qlQuery.fromString('SELECT * FROM csp WHERE meta(csp).id LIKE "S:_"')
+  var query = N1qlQuery.fromString('SELECT * FROM csp WHERE meta(csp).id LIKE "Student:_"')
 
   return new Promise((resolve,reject) =>
   {
@@ -15,10 +15,12 @@ var getStudentInfo = function()
     {
       if(err)
       {
+        console.log(err);
         reject("Error");
       }
       else
       {
+        console.log(res);
         resolve(res);
       }
     });

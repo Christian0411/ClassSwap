@@ -49,6 +49,7 @@ app.controller('homeCtrl', function($scope, $location, $rootScope, $http){
     url:'/api/getStudentInfo'
   }).then(function(res)
   {
+    console.log(res.data[0]);
     $scope.Students = res.data;
   })
 
