@@ -49,7 +49,7 @@ app.controller('homeCtrl', function($scope, $location, $rootScope, $http){
     url:'/api/getStudentInfo'
   }).then(function(res)
   {
-    console.log(res.data[0]);
+    console.log(res);
     $scope.Students = res.data;
   })
 
@@ -79,6 +79,12 @@ app.controller('homeCtrl', function($scope, $location, $rootScope, $http){
 //Controller for Login/Register page
 app.controller('loginCtrl', function($scope, $location, $rootScope, $http){
 
+  //Function to go back to home is user tries to swap with themselves
+  $scope.goBack = function()
+  {
+    $location.path("/");
+  }
+
   //Function to move to register if you don't have account
   $scope.register = function()
   {
@@ -101,19 +107,28 @@ app.controller('loginCtrl', function($scope, $location, $rootScope, $http){
               url: "/api/login",
               data: body
           }).then(function(res,status,headers) {
+              console.log(username + " " + $rootScope.trader);
               if(res.data.error != "Error")
               {
-                $rootScope.loggedIn = true;
-                $scope.username = username;
-                $scope.pass = pass;
-                $rootScope.student = res.data[0].csp;
-                if($rootScope.fromSwap)
+                if(username != $rootScope.trader)
                 {
-                  $location.path("/swap");
+                  $rootScope.loggedIn = true;
+                  $scope.username = username;
+                  $scope.pass = pass;
+                  $rootScope.student = res.data[0].csp;
+                  if($rootScope.fromSwap)
+                  {
+                    $location.path("/swap");
+                  }
+                  else
+                  {
+                    $location.path("/myAccount");
+                  }
                 }
                 else
                 {
-                  $location.path("/myAccount");
+                    $scope.sameUserAlert = true;
+                    $scope.showAlert = false;
                 }
 
               }

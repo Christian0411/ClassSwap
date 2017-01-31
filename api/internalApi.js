@@ -7,8 +7,10 @@ var N1qlQuery = couchbase.N1qlQuery;
 
 var getStudentInfo = function()
 {
-  var query = N1qlQuery.fromString('SELECT * FROM csp WHERE meta(csp).id LIKE "Student:_"')
-
+  var query = N1qlQuery.fromString('SELECT C.*, S.username '
+                              + 'FROM csp S '
+                              + 'JOIN csp C on KEYS S.Has '
+                              + 'WHERE meta(S).id Like "Student:%"');
   return new Promise((resolve,reject) =>
   {
     bucket.query(query, function(err,res)
@@ -20,8 +22,25 @@ var getStudentInfo = function()
       }
       else
       {
-        console.log(res);
-        resolve(res);
+        console.log(res[0])
+        var data = [[]];
+        var count = 0;
+        for(var i = 0; i < res.length; i++)
+        {
+            if(res[i+1] != null && res[i].username == res[i+1].username)
+            {
+              data[count].push(res[i]);
+              data[count].push(res[i+1]);
+              i++;
+            }
+            else
+            {
+              count++;
+              data[count] = []
+              data[count].push(res[i]);
+            }
+          }
+        resolve(data);
       }
     });
   });
