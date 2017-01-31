@@ -63,6 +63,28 @@ var login = function(user, pass)
   });
 }
 
+var registerStudent = function(userInfo)
+{
+  var validateUserQuery = N1qlQuery.fromString
+  ('SELECT * FROM csp WHERE username ==' + '"'
+  + userInfo.user + '" ' + 'OR ' + 'email ==' + '"'
+  + userInfo.email + '"'  )
+
+  return new Promise ((resolve, reject) => {
+    bucket.query(validateUserQuery,function(err,res){
+        if(err)
+        {
+          reject(err)
+        }
+
+    });
+
+
+  })
+
+
+
+}
 
 
 module.exports = {

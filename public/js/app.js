@@ -77,7 +77,7 @@ app.controller('homeCtrl', function($scope, $location, $rootScope, $http){
 });
 
 //Controller for Login/Register page
-app.controller('registerCtrl', function($scope, $location, $rootScope, $http){
+app.controller('loginCtrl', function($scope, $location, $rootScope, $http){
 
   //Function to move to register if you don't have account
   $scope.register = function()
@@ -184,5 +184,16 @@ app.controller('myAccountCtrl', function($scope, $location, $rootScope, $http){
     $location.path("/myAccount");
   }
 
+
+});
+
+app.controller('registerCtrl', function($scope, $location, $rootScope, $http){
+
+  $scope.submit = function()
+  {
+    //TODO: HTTP BACKEND CALL TO REGISTER.
+
+
+  }
 
 });
