@@ -7,8 +7,10 @@ var N1qlQuery = couchbase.N1qlQuery;
 
 var getStudentInfo = function()
 {
-  var query = N1qlQuery.fromString('SELECT * FROM csp WHERE meta(csp).id LIKE "Student:_"')
-
+  var query = N1qlQuery.fromString('SELECT C.*, S.username '
+                              + 'FROM csp S '
+                              + 'JOIN csp C on KEYS S.Has '
+                              + 'WHERE meta(S).id Like "Student:%"');
   return new Promise((resolve,reject) =>
   {
     bucket.query(query, function(err,res)
@@ -20,59 +22,29 @@ var getStudentInfo = function()
       }
       else
       {
-        //student counter
-        var sCount = 0;
-        //class counter
-        var cCount = 0;
-        var hasClass = "";
-
-        //iterates through each student
-        //stops once all students have been iterated through
-        while(res[sCount] != null)
+        console.log(res[0])
+        var data = [[]];
+        var count = 0;
+        for(var i = 0; i < res.length; i++)
         {
-            //gets the array of Has classes for each student
-            console.log(res[sCount].csp.Has);
-
-            //iterates through each class a student has
-            //stops once all classes have been iterated through
-            while(res[sCount].csp.Has[cCount] != null)
+            if(res[i+1] != null && res[i].username == res[i+1].username)
             {
-              console.log(res[sCount].csp.Has[cCount]);
-              //gets each individual class in Has array
-              hasClass = res[sCount].csp.Has[cCount];
-              getClassInfo(hasClass);
-              cCount++;
+              data[count].push(res[i]);
+              data[count].push(res[i+1]);
+              i++;
             }
-
-            sCount++;
-            cCount = 0;
-        }
-        resolve(res);
+            else
+            {
+              count++;
+              data[count] = []
+              data[count].push(res[i]);
+            }
+          }
+        resolve(data);
       }
     });
   });
 
-}
-
-//function to get class info; called from within getStudentInfo
-var getClassInfo = function (classId)
-{
-    query = N1qlQuery.fromString('SELECT * FROM csp WHERE meta(csp).id LIKE "' + classId + '"')
-    return new Promise((resolve,reject) =>
-    {
-      bucket.query(query, function(err,res)
-      {
-        if(err)
-        {
-          console.log(err);
-          reject("Error");
-        }
-        else
-        {
-          resolve(res);
-        }
-      });
-    });
 }
 
 var login = function(user, pass)
