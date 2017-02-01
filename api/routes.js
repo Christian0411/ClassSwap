@@ -13,8 +13,17 @@ router.get('/api/getStudentInfo', function(req,res)
   .catch(err=>{res.send({error:err})});
 });
 
+router.get('/api/getWantsClasses', function(req,res)
+{
+  api.getWantsClasses()
+  .then(data => {
+    res.send(JSON.stringify(data,null,4));
+  })
+  .catch(err=>{res.send({error:err})});
+});
+
 router.post('/api/login', function(req,res)
-{  
+{
   api.login(req.body.username, req.body.pass)
   .then(data => {
     res.send(JSON.stringify(data,null,4));

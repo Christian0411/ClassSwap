@@ -44,14 +44,29 @@ app.controller('navCtrl', function($scope, $location, $rootScope, $http){
 //Controller for home page
 app.controller('homeCtrl', function($scope, $location, $rootScope, $http){
 
+  //Gets classes the students have
   $http({
     method:"GET",
     url:'/api/getStudentInfo'
   }).then(function(res)
   {
+    console.log("Has");    
     console.log(res);
     $scope.Students = res.data;
   })
+
+  //Gets classes the students want
+  $http({
+    method:"GET",
+    url:'/api/getWantsClasses'
+  }).then(function(res)
+  {
+    console.log("Wants");
+    console.log(res);
+    $scope.stdWants = res.data;
+  })
+
+
 
   // Function to move to swap page
   $scope.swap = function(traderName)
