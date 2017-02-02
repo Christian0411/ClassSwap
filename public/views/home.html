@@ -28,7 +28,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <button class="loginBtn" type="button" ng-click="login()">Login</button>
+                    <button class="loginBtn" type="button" ng-click="login()">Login <i class="fa fa-sign-in" aria-hidden="true"></i></button>
                 </li>
                 <!-- <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <b class="caret"></b></a>
@@ -79,7 +79,10 @@
             <!-- Repeats for all students in DB -->
             <div ng-repeat="student in Students" class="panel panel-default">
                 <div class="panel-heading">
-                    <h4>{{student[0].username}}</h4>
+                    <h4><i class="fa fa-user" aria-hidden="true"></i> {{student[0].username}}</h4>
+                    <button type="button" id="infoBtn" class="btn btn-default">
+                      <i style="float: right; margin-top: -3px;"class="fa fa-info-circle" aria-hidden="true"></i>
+                    </button>
                 </div>
                 <div class="panel-body">
                   <table class="table">
@@ -91,12 +94,12 @@
                     </thead>
                     <tbody>
                       <tr ng-repeat="course in student">
-                        <td><i class="fa fa-circle" aria-hidden="true"></i> {{course.courseName}} - {{course.professorName}} ({{course.days}} {{course.startTime}} - {{course.endTime}})
+                        <td><i class="fa fa-caret-right" aria-hidden="true"></i> {{course.courseName}} - {{course.professorName}} ({{course.days}} {{course.startTime}} - {{course.endTime}})
                         </td>
                       </tr>
                     </tbody>
                   </table>
-                  <a href="" ng-click="swap(student.csp.username)" class="btn btn-default">Swap</a>
+                  <a href="" ng-click="swap(student.csp.username)" class="btn btn-default"><i class="fa fa-exchange" aria-hidden="true"></i> Swap</a>
                 </div>
             </div>
         </div>
