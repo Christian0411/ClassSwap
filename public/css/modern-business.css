@@ -84,6 +84,15 @@ footer {
   padding: 50px 0 0;
   margin: 3px -50px !important;
 }
+.navbar-brand:hover{
+  background: url("../imgs/logoHover.png")  no-repeat scroll 0 center / contain;
+  display: inline-block;
+  max-width: 230px;
+  min-width: 180px;
+  overflow: hidden;
+  padding: 50px 0 0;
+  margin: 3px -50px !important;
+}
 
 /*table width*/
 .panel-default {
