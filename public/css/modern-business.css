@@ -142,6 +142,10 @@ footer {
     background: transparent;
     border: none !important;
     color: white;
+
+}
+.loginBtn:hover{
+  color: #EAC332;
 }
 
 /*Register form */
@@ -194,7 +198,7 @@ footer {
 }
 .stylish-input-group button{
     border:none;
-    height: 5px;
+    height: 20px;
     background:transparent;
 }
 #imaginary_container{
@@ -209,6 +213,7 @@ footer {
 }
 /*****************************************************************************/
 
+/************************************Icons************************************/
 #infoBtn {
   float: right;
   margin-top: -45px;
@@ -217,24 +222,22 @@ footer {
   border: none;
 }
 
-.fa-user:hover{
+.fa-search:hover{
   color: #EAC332;
 }
+
+
 .fa-info-circle:hover{
   color: #EAC332;
 }
 
-.fa-sign-in:hover{
-  color: #EAC332;
-}
-
-.fa-sign-out:hover{
-  color: #EAC332;
-}
 a:hover{
   color: #EAC332;
 }
 
 .btn-default:hover{
   color: #EAC332;
+  background-color: #F5F5F5;
+
 }
+/*****************************************************************************/

@@ -63,8 +63,8 @@
                 <div class="input-group stylish-input-group">
                     <input type="text" class="form-control"  placeholder="Search" >
                     <span class="input-group-addon">
-                        <button type="submit">
-                            <span class="glyphicon glyphicon-search"></span>
+                        <button type="button">
+                            <i class="fa fa-search" aria-hidden="true"></i>
                         </button>
                     </span>
                 </div>
@@ -83,13 +83,18 @@
                     <button type="button" id="infoBtn" class="btn btn-default">
                       <i style="float: right; margin-top: -3px;"class="fa fa-info-circle" aria-hidden="true"></i>
                     </button>
+                    <script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
                 </div>
                 <div class="panel-body">
                   <table class="table">
                     <thead>
                       <tr>
-                        <th>Has</th>
-                        <th>Wants</th>
+                        <th><i class="fa fa-folder" aria-hidden="true"></i> Has</th>
+                        <th><i class="fa fa-folder-open" aria-hidden="true"></i> Wants</th>
                       </tr>
                     </thead>
                     <tbody>
