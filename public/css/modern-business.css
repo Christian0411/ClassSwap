@@ -178,15 +178,13 @@ footer {
   text-align: center;
 }
 
-
+/********************************Search Bar***********************************/
 .stylish-input-group .input-group-addon{
     background: white !important;
     border: none;
 }
 .stylish-input-group .form-control{
 	border:none;
-
-
 }
 .stylish-input-group button{
     border:none;
@@ -194,11 +192,13 @@ footer {
     background:transparent;
 }
 #imaginary_container{
+    /*FIXME*/
     position: absolute;
     padding-top: 50px;
-    float:inherit;
+    float:right;
     border: none;
 }
 .glyphicon{
   margin-top: -6px;
 }
+/*****************************************************************************/
