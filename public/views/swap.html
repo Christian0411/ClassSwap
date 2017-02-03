@@ -49,10 +49,10 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li ng-controller="myAccountCtrl">
-                        <a href="" ng-click="myAccount()">My Account</a>
+                        <button class="acntBtn" type="button" ng-click="myAccount()">My Account <i class="fa fa-archive" aria-hidden="true"></i></button>
                     </li>
                     <li>
-                        <a href="" ng-click="logout()">Logout</a>
+                        <button class="loginBtn" type="button" ng-click="logout()">Logout <i class="fa fa-sign-out" aria-hidden="true"></i></button>
                     </li>
                     <!-- <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <b class="caret"></b></a>
@@ -89,12 +89,12 @@
                 <h1 class="page-header">
                     Swap
                 </h1>
-                <h6>Choose which class(es) you want and which you are willing to swap.</h6>
+                <!-- <h6>Choose which class(es) you want and which you are willing to swap.</h6> -->
             </div>
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4>{{trader}}</h4>
+                        <h4><i class="fa fa-user" aria-hidden="true"></i> {{trader}}</h4>
                     </div>
                     <div class="panel-body">
                       <table class="table">
@@ -123,7 +123,7 @@
                           </tr>
                         </tbody>
                       </table>
-                      <a href="" id="swap_button" ng-click="confirmSwap()" class="btn btn-default">Swap</a>
+                      <a href="" id="swap_button" ng-click="confirmSwap()" class="btn btn-default"><i class="fa fa-exchange" aria-hidden="true"></i> Swap</a>
                       <div ng-show="confirmed" class="alert alert-success">
                         <strong>Success!</strong> An email has been sent to {{trader}} with your
                         contact information to complete the swap!

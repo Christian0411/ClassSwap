@@ -152,6 +152,16 @@ footer {
 }
 /**************************************************************************/
 
+.acntBtn{
+  padding-top: 20px;
+  padding-right: 20px;
+  background: transparent;
+  border: none !important;
+  color: white;
+}
+.acntBtn:hover{
+  color: #EAC332;
+}
 .loginBtn {
     padding-top: 20px;
     background: transparent;
@@ -283,6 +293,8 @@ a:hover{
 
 }
 /*****************************************************************************/
+
+/*********************************Class Info**********************************/
 h5{
   color: #3F4C6F;
   margin-top: -17px;
@@ -296,3 +308,4 @@ h6{
 h4{
   font-weight: bold;
 }
+/*****************************************************************************/
