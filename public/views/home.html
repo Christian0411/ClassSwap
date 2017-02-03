@@ -94,7 +94,15 @@
                     </thead>
                     <tbody>
                       <tr ng-repeat="course in student">
-                        <td><i class="fa fa-caret-right" aria-hidden="true"></i> {{course.courseName}} - {{course.professorName}} ({{course.days}} {{course.startTime}} - {{course.endTime}})
+                        <td class="classInfo">
+                          <!-- <i class="fa fa-caret-right" aria-hidden="true"></i>{{course.courseName}} </br> {{course.professorName}} </br> ({{course.days}} {{course.startTime}} - {{course.endTime}}) -->
+                          <i class="fa fa-caret-right" aria-hidden="true"></i><h5>{{course.courseName}}</h5>
+                          <h6>{{course.professorName}} </br> ({{course.days}} {{course.startTime}} - {{course.endTime}})</h6>
+                        </td>
+                        <td class="classInfo">
+                          <!-- <i class="fa fa-caret-right" aria-hidden="true"></i>{{course.courseName}} </br> {{course.professorName}} </br> ({{course.days}} {{course.startTime}} - {{course.endTime}}) -->
+                          <i class="fa fa-caret-right" aria-hidden="true"></i><h5>{{course.courseName}}</h5>
+                          <h6>{{course.professorName}} </br> ({{course.days}} {{course.startTime}} - {{course.endTime}})</h6>
                         </td>
                       </tr>
                     </tbody>

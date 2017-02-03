@@ -10,6 +10,7 @@ html,
 body {
     height: 100%;
     background-color: #E5E8F0;
+    font-family: 'Nunito';
 }
 
 body {
@@ -95,8 +96,13 @@ footer {
 }
 
 /*table width*/
-.panel-default {
-  width: 1140px;
+.panel{
+  width: 900px;
+  margin-left: 100px;
+}
+
+.page-header{
+  margin-left: 100px;
 }
 
 .navbar{
@@ -147,7 +153,7 @@ footer {
 /**************************************************************************/
 
 .loginBtn {
-    padding-top: 15px;
+    padding-top: 20px;
     background: transparent;
     border: none !important;
     color: white;
@@ -173,8 +179,11 @@ footer {
 
 /************************* My Account **************************************/
 /*icon to delete classes*/
-#x {
-  color: red;
+#x{
+  color: #3F4C6F;
+}
+#x:hover {
+  color: #EAC332;
 }
 
 /*Buttons to edit classes*/
@@ -216,6 +225,7 @@ footer {
     padding-top: 50px;
     float:right;
     border: none;
+    margin-left: 100px;
 }
 .glyphicon{
   margin-top: -6px;
@@ -230,12 +240,35 @@ footer {
   background: transparent;
   border: none;
 }
+#3F4C6F;
 
 .fa-search:hover{
   color: #EAC332;
 }
 
+.fa-user{
+  color: #3F4C6F;
+}
 
+.fa-folder{
+  color: #3F4C6F;
+}
+
+.fa-folder-open{
+  color: #3F4C6F;
+}
+
+/*.fa-exchange{
+  color: #3F4C6F;
+}*/
+
+.fa-caret-right{
+  color: #3F4C6F;
+}
+
+.fa-info-circle{
+  color: #3F4C6F;
+}
 .fa-info-circle:hover{
   color: #EAC332;
 }
@@ -250,3 +283,16 @@ a:hover{
 
 }
 /*****************************************************************************/
+h5{
+  color: #3F4C6F;
+  margin-top: -17px;
+  margin-left: 15px;
+  font-weight: bold;
+}
+h6{
+  color: #707070;
+  margin-left: 15px;
+}
+h4{
+  font-weight: bold;
+}

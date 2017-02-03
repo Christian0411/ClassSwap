@@ -74,39 +74,51 @@
         <div class="col-md-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h4>{{student.username}}</h4>
+                    <h4><i class="fa fa-user" aria-hidden="true"></i> {{student.username}}</h4>
                     <button ng-if="isRemoving || isAdding" type="button" id="doneBtn" ng-click="done()" class="btn btn-default">
-                      <span class="glyphicon glyphicon-check"></span> Done
+                      <i class="fa fa-check" aria-hidden="true"></i> Done
                     </button>
                     <button ng-if="!isRemoving && !isAdding" type="button" id="removeBtn" ng-click="remove()" class="btn btn-default">
-                      <span class="glyphicon glyphicon-minus"></span> Remove
+                      <i class="fa fa-minus" aria-hidden="true"></i> Remove
                     </button>
                     <button ng-if="!isAdding && !isRemoving" type="button" id="addBtn" ng-click="add()" class="btn btn-default">
-                      <span class="glyphicon glyphicon-plus"></span> Add
+                      <i class="fa fa-plus" aria-hidden="true"></i> Add
                     </button>
                 </div>
                 <div class="panel-body">
                   <table class="table">
                     <thead>
                       <tr>
-                        <th>Has</th>
-                        <th>Wants</th>
+                        <th><i class="fa fa-folder" aria-hidden="true"></i> Has</th>
+                        <th><i class="fa fa-folder-open" aria-hidden="true"></i> Wants</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td><i id = "x" ng-if="isRemoving" class="fa fa-times" aria-hidden="true"></i> COP4338 - Programming 3 - Caryl Rahn <br/> (MW 2 - 3:15 PM)
+                        <td>
+                          <i id = "x" ng-if="isRemoving" class="fa fa-times" aria-hidden="true"></i>
+                          <i class="fa fa-caret-right" aria-hidden="true"></i><h5>COP4338</h5>
+                          <h6>Programming 3 - Caryl Rahn <br/> (MW 2 - 3:15 PM)</h6>
                         </td>
-                        <td><i id = "x" ng-if="isRemoving" class="fa fa-times" aria-hidden="true"></i> MAD3512 - Theory of Algorithms - George Kafkoulis <br/> (TR 7:50 - 9 PM)
+                        <td>
+                          <i id = "x" ng-if="isRemoving" class="fa fa-times" aria-hidden="true"></i>
+                          <i class="fa fa-caret-right" aria-hidden="true"></i><h5>MAD3512</h5>
+                          <h6>Theory of Algorithms - George Kafkoulis <br/> (TR 7:50 - 9 PM)</h6>
                         </td>
                       </tr>
                       <tr>
-                        <td><i id = "x" ng-if="isRemoving" class="fa fa-times" aria-hidden="true"></i> COP4710 - Database Management - Jainendra Navlakha <br/> (TR 2 - 3:15 PM)
+                        <td>
+                          <i id = "x" ng-if="isRemoving" class="fa fa-times" aria-hidden="true"></i>
+                          <i class="fa fa-caret-right" aria-hidden="true"></i><h5>COP4710</h5>
+                          <h6>Database Management - Jainendra Navlakha <br/> (TR 2 - 3:15 PM)</h6>
                         </td>
                         <td></td>
                       </tr>
                       <tr>
-                        <td><i id = "x" ng-if="isRemoving" class="fa fa-times" aria-hidden="true"></i> MAD2104 - Discrete Math - Susan Gorman <br/> (TR 5 - 6:30 PM)
+                        <td>
+                          <i id = "x" ng-if="isRemoving" class="fa fa-times" aria-hidden="true"></i>
+                          <i class="fa fa-caret-right" aria-hidden="true"></i><h5>MAD2104</h5>
+                          <h6>Discrete Math - Susan Gorman <br/> (TR 5 - 6:30 PM)</h6>
                         </td>
                       <td></td>
                       </tr>
